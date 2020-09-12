@@ -59,31 +59,11 @@ dclient.on('message', message => { // Checks for command
         return;
     } { //universal commands
         if (config.allowedchannels.includes(message.channel.id)) {
-            if ((message.content.toLowerCase() === 'a!help'))
-                message.channel.send("``Command Help``\na!woag - wide woag\na!doge - wide doge\na!putin - wide putin be walkin\na!ocr - identifies text in an image using tesseract api\na!say - repeats the text after say\na!yandev - yandere dev\na!custom - lists custom commands for the server this command is sent in\n``Other Miscellaneous Features``\nRule 7 Sensor - if nvidiotism or uninteligence is detected in a message, I will say <:peepocringe:697801525925380096>\nSwear Filter - if I detect a hard r in a message, I will delete it and send a funny gif\nInactivity Timer - if a channel is inactive for a specified amount of time, I will send a message custom to that server\n   ");
-            if ((message.content.toLowerCase() === 'a!woag'))
-                message.channel.send("<:woag1:730641000145616906><:woag2:730640992797196339>");
-            if ((message.content.toLowerCase() === 'a!doge'))
-                message.channel.send("<:doge1:730637136629465188><:doge2:730637219278356542>");
-            if ((message.content.toLowerCase() === 'a!putin'))
-                message.channel.send("<:putin1:730931077450956810><:putin2:730931099890352265>");
-            if ((message.content.toLowerCase() === 'a!pogfish'))
-                message.channel.send("<a:pogfish:663943285328445465>");
-            if ((message.content.toLowerCase() === 'a!yandev'))
-                message.channel.send("<:yandevstare:736768240226795653>")
-            if (message.content.toLowerCase().startsWith("a!ocr"))
-                ocr(message);
-            if (message.content.toLowerCase().startsWith("a!say"))
-                message.channel.send('``' + message.content.substr(message.content.indexOf(" ") + 1) + '``');
-            if (message.content.toLowerCase().startsWith("im"))
-                message.channel.send('hi ' + message.content.substr(message.content.indexOf(" ") + 1) + ', im AyyMD bot!');
+            commands.parse(message);
         }
     } { //kirbbot testing commands
         if (message.channel.id == 730612157133226068) {
-            if ((message.content.toLowerCase() === 'a!ctoast'))
-                message.channel.send("are you tired of burning your toast? does it always ruin the morning? do you constantly have to get new toast because of the toast burning? well with the all new ctoast toaster you will never burn your toast again you use it just like a regular toaster you put your toast in put it down and set your heat you can toast up to 2 pieces of toast at once and you can see the toast toasting from either side through the tempered glass windows and with all these features in one toaster it will ensure that you get the perfect toast every time it can be yours for only $79.99 yes you hear that right only $79.99 you can pick it up at your local appliance dealer or on amazon for only $79.99 you can also order it from us and get a complimentary loaf of bread call 1800-1-ctoast once again that is 1800-128-6278 and it can be yours for only $79.99");
-            if ((message.content.toLowerCase() === 'a!quaaludes'))
-                message.channel.send("Ey, the big man's baca! www dot the kid from brooklyn dot com. Ever see them signs on a highway billboards years ago? I'd walk a mile for a camel. Or they used to have cigarette commercials, the guy used to say, I'd walk a mile for a camel.? Well, let me tell all you young people out there: The big man would walk 20 miles for a Quaalude, let me tell ya! That was the drug back then, in the late 70s and 80s: Quaaludes! The good old Rorer 714, then they changed it to Lemmon. I tell ya! I wish I had a couple of them fucking Lemmons now! That was the best fucking drug ever made! It was so fucking good, the government took them off the fucking market 'cause they were putting the fucking drug-dealers out of fucking business! Non-narcotic, non-addictive, bring back those fucking Quaaludes! You can take all the fucking cocaine, marijuana, and all them fucking designer drugs they make today, and stick them up your fucking ass! There's nothing like a fucking Quaalude! I figured they were the fucking best, having sex and a Quaalude, you thought you'd died and went to heaven, let me tell ya. And when you had an orgasm, you thought you were on the fucking moon! Bring back those fucking Quaaludes! Anyway, think about it! This is the big man, the voice! The voice of the people! Rorer 714! And the big man's always, alway haha happy to see you! ");
+            commands.parse(message, 'test');
         }
     } { //ayymd botspam commands
         if (message.channel.id == 390225609550331924) {
