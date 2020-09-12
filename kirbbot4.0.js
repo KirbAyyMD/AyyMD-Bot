@@ -102,10 +102,10 @@ dclient.on('message', message => { // Checks for command
     else if (message.content.toLowerCase().includes('intel is better')){message.react('697801525925380096');}
     else if (message.content.toLowerCase().includes('intel is good')){message.react('697801525925380096');}
     else if (message.content.toLowerCase().includes('intel is best')){message.react('697801525925380096');}
-    else if (message.content.toLowerCase().includes('buy intel')){cringe.check(message.content)}
-    else if (message.content.toLowerCase().includes('buy an intel')){cringe.check(message.content)}
-    else if (message.content.toLowerCase().includes('buy nvidia')){cringe.check(message.content)}
-    else if (message.content.toLowerCase().includes('buy an nvidia')){cringe.check(message.content)}
+    else if (message.content.toLowerCase().includes('buy intel')){message.react(cringe.check(message.content));}
+    else if (message.content.toLowerCase().includes('buy an intel')){message.react(cringe.check(message.content));}
+    else if (message.content.toLowerCase().includes('buy nvidia')){message.react(cringe.check(message.content));}
+    else if (message.content.toLowerCase().includes('buy an nvidia')){message.react(cringe.check(message.content));}
     else if (message.content.toLowerCase().includes('intel is the best')){message.react('697801525925380096');}
     else if (message.content.toLowerCase().includes('intel makes the best')){message.react('697801525925380096');}
     else if (message.content.toLowerCase().includes('i like nvidia')){message.react('697801525925380096');}
