@@ -4,6 +4,7 @@ const Tesseract = require ('tesseract.js')
 const dclient = new Discord.Client();
 const vclient = new vision.ImageAnnotatorClient();
 const config = require("./config.json");
+const cringe = require("./cringe_check.js");
 
 async function ocr(message) {
     console.log(message);
@@ -43,71 +44,9 @@ async function ocr(message) {
 
     } else {
         message.channel.send("File format is not supported");
-}}function cringecheck1(message) {
-    if (message.content.toLowerCase().includes('dont')){
-        if (message.content.toLowerCase().includes('dont not not not')){message.react('697801525925380096');}
-        else if (message.content.toLowerCase().includes('dont not not')){message.react('701869345072218113');}
-        else if (message.content.toLowerCase().includes('dont not')){message.react('697801525925380096');}
-        else {message.react('701869345072218113');}
-    }
-    else if (message.content.toLowerCase().includes("don't")){
-        if (message.content.toLowerCase().includes("don't not not not")){message.react('697801525925380096');}
-        else if (message.content.toLowerCase().includes("don't not not")){message.react('701869345072218113');}
-        else if (message.content.toLowerCase().includes("don't not")){message.react('697801525925380096');}
-        else {message.react('701869345072218113');}
-    }
-    else if (message.content.toLowerCase().includes("don’t")){
-        if (message.content.toLowerCase().includes('don’t not not not')){message.react('697801525925380096');}
-        else if (message.content.toLowerCase().includes('don’t not not')){message.react('701869345072218113');}
-        else if (message.content.toLowerCase().includes('don’t not')){message.react('697801525925380096');}
-        else {message.react('701869345072218113');}
-    }
-    else if (message.content.toLowerCase().includes("do not")){
-        if (message.content.toLowerCase().includes('do not not not not')){message.react('697801525925380096');}
-        else if (message.content.toLowerCase().includes('do not not not')){message.react('701869345072218113');}
-        else if (message.content.toLowerCase().includes('do not not')){message.react('697801525925380096');}
-        else {message.react('701869345072218113');}
-    }
-    else if (message.content.toLowerCase().includes("ever")){
-        if (message.content.toLowerCase().includes('ever not not not ')){message.react('697801525925380096');}
-        else if (message.content.toLowerCase().includes('ever not not')){message.react('701869345072218113');}
-        else if (message.content.toLowerCase().includes('ever not')){message.react('697801525925380096');}
-        else {message.react('701869345072218113');}
-    }
-    else {message.react('697801525925380096');}
-}function cringecheck2(message) {
-    if (message.content.toLowerCase().includes('dont')){
-        if (message.content.toLowerCase().includes('dont not not not')){message.react('701869345072218113');}
-        else if (message.content.toLowerCase().includes('dont not not')){message.react('697801525925380096');}
-        else if (message.content.toLowerCase().includes('dont not')){message.react('701869345072218113');}
-        else {message.react('697801525925380096');}
-    }
-    else if (message.content.toLowerCase().includes("don't")){
-        if (message.content.toLowerCase().includes("don't not not not")){message.react('701869345072218113');}
-        else if (message.content.toLowerCase().includes("don't not not")){message.react('697801525925380096');}
-        else if (message.content.toLowerCase().includes("don't not")){message.react('701869345072218113');}
-        else {message.react('697801525925380096');}
-    }
-    else if (message.content.toLowerCase().includes("don’t")){
-        if (message.content.toLowerCase().includes('don’t not not not')){message.react('701869345072218113');}
-        else if (message.content.toLowerCase().includes('don’t not not')){message.react('697801525925380096');}
-        else if (message.content.toLowerCase().includes('don’t not')){message.react('701869345072218113');}
-        else {message.react('697801525925380096');}
-    }
-    else if (message.content.toLowerCase().includes("do not")){
-        if (message.content.toLowerCase().includes('do not not not not')){message.react('701869345072218113');}
-        else if (message.content.toLowerCase().includes('do not not not')){message.react('697801525925380096');}
-        else if (message.content.toLowerCase().includes('do not not')){message.react('701869345072218113');}
-        else {message.react('697801525925380096');}
-    }
-    else if (message.content.toLowerCase().includes("ever")){
-        if (message.content.toLowerCase().includes('ever not not not ')){message.react('701869345072218113');}
-        else if (message.content.toLowerCase().includes('ever not not')){message.react('697801525925380096');}
-        else if (message.content.toLowerCase().includes('ever not')){message.react('701869345072218113');}
-        else {message.react('697801525925380096');}
-    }
-    else {message.react('701869345072218113');}
-}dclient.login(config.token); // login the bot with your token.
+}}
+
+dclient.login(config.token); // login the bot with your token.
 dclient.on('message', message => { // Checks for command
     if (message.member.user === dclient.user) {
         return;}
@@ -163,10 +102,10 @@ dclient.on('message', message => { // Checks for command
     else if (message.content.toLowerCase().includes('intel is better')){message.react('697801525925380096');}
     else if (message.content.toLowerCase().includes('intel is good')){message.react('697801525925380096');}
     else if (message.content.toLowerCase().includes('intel is best')){message.react('697801525925380096');}
-    else if (message.content.toLowerCase().includes('buy intel')){cringecheck1(message)}
-    else if (message.content.toLowerCase().includes('buy an intel')){cringecheck1(message)}
-    else if (message.content.toLowerCase().includes('buy nvidia')){cringecheck1(message)}
-    else if (message.content.toLowerCase().includes('buy an nvidia')){cringecheck1(message)}
+    else if (message.content.toLowerCase().includes('buy intel')){cringe.check(message.content)}
+    else if (message.content.toLowerCase().includes('buy an intel')){cringe.check(message.content)}
+    else if (message.content.toLowerCase().includes('buy nvidia')){cringe.check(message.content)}
+    else if (message.content.toLowerCase().includes('buy an nvidia')){cringe.check(message.content)}
     else if (message.content.toLowerCase().includes('intel is the best')){message.react('697801525925380096');}
     else if (message.content.toLowerCase().includes('intel makes the best')){message.react('697801525925380096');}
     else if (message.content.toLowerCase().includes('i like nvidia')){message.react('697801525925380096');}
